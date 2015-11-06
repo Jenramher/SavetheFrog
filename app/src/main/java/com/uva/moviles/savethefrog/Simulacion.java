@@ -1,9 +1,12 @@
-package com.uva.moviles.savethefrog;
+package com.example.jennifer.savethefrog;
 
 import android.opengl.GLSurfaceView;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
+/**
+ * Created by Jennifer on 03/11/2015.
+ */
 public class Simulacion extends AppCompatActivity {
 
     private GLSurfaceView mGLView;
@@ -16,4 +19,5 @@ public class Simulacion extends AppCompatActivity {
 
         setContentView(mGLView);
     }
+
 }

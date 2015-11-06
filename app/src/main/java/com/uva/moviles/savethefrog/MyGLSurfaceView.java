@@ -1,12 +1,12 @@
-package com.uva.moviles.savethefrog;
+package com.example.jennifer.savethefrog;
 
 import android.content.Context;
 import android.opengl.GLSurfaceView;
 
 /**
- * Created by Mario on 30/10/2015.
+ * Created by Jennifer on 03/11/2015.
  */
-public class MyGLSurfaceView extends GLSurfaceView{
+public class MyGLSurfaceView extends GLSurfaceView {
     private MyGLRenderer mRenderer;
 
     public MyGLSurfaceView(Context context) {
@@ -16,9 +16,9 @@ public class MyGLSurfaceView extends GLSurfaceView{
 
 
         setEGLContextClientVersion(2);
+        super.setEGLConfigChooser(8,8,8,8,16,0);
 
         setRenderer(mRenderer);
 
     }
-
 }
