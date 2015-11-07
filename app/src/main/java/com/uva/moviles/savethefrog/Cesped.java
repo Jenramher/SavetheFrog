@@ -67,12 +67,12 @@ public class Cesped {
         drawListBuffer.put(drawOrder);
         drawListBuffer.position(0);
 
-        //int vertexShader = MyGLRenderer.loadShader(GLES20.GL_VERTEX_SHADER,vertexShaderCode);
-        //int fragmentShader = MyGLRenderer.loadShader(GLES20.GL_FRAGMENT_SHADER,fragmentShaderCode);
+        int vertexShader = MyGLRenderer.loadShader(GLES20.GL_VERTEX_SHADER,vertexShaderCode);
+        int fragmentShader = MyGLRenderer.loadShader(GLES20.GL_FRAGMENT_SHADER,fragmentShaderCode);
 
         mProgram = GLES20.glCreateProgram();
-        //GLES20.glAttachShader(mProgram,vertexShader);
-        //GLES20.glAttachShader(mProgram,fragmentShader);
+        GLES20.glAttachShader(mProgram,vertexShader);
+        GLES20.glAttachShader(mProgram,fragmentShader);
 
         GLES20.glLinkProgram(mProgram);
 

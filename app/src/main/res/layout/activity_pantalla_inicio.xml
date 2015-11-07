@@ -20,6 +20,7 @@
         android:layout_marginTop="250dp"
         android:id="@+id/jugar"
         android:textSize="100dp"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onClick="iniciarSimulacion"/>
 
 </RelativeLayout>

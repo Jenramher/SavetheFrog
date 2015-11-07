@@ -16,7 +16,7 @@ public class MyGLSurfaceView extends GLSurfaceView {
 
 
         setEGLContextClientVersion(2);
-        super.setEGLConfigChooser(8,8,8,8,16,0);
+        //super.setEGLConfigChooser(8,8,8,8,16,0);
 
         setRenderer(mRenderer);
 

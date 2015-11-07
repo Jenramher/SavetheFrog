@@ -1,13 +1,13 @@
 package com.uva.moviles.savethefrog;
 
+import android.app.Activity;
 import android.opengl.GLSurfaceView;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 
 /**
  * Created by Jennifer on 03/11/2015.
  */
-public class Simulacion extends AppCompatActivity {
+public class Simulacion extends Activity {
 
     private GLSurfaceView mGLView;
 
