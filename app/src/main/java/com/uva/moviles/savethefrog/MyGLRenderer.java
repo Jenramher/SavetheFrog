@@ -1,4 +1,4 @@
-package com.example.jennifer.savethefrog;
+package com.uva.moviles.savethefrog;
 
 import android.opengl.GLES20;
 import android.opengl.GLSurfaceView;
