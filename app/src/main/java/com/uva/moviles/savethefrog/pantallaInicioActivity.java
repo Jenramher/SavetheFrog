@@ -11,6 +11,11 @@ import android.view.View;
  */
 public class pantallaInicioActivity extends AppCompatActivity {
 
+    //TODO: Acerca de....
+    //TODO: Configuraciones???
+    //TODO: Interfaz un poco mas curiosa
+    //TODO: JAVADOC
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

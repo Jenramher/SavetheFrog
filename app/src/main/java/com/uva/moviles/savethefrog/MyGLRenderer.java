@@ -3,7 +3,6 @@ package com.uva.moviles.savethefrog;
 import android.opengl.GLES20;
 import android.opengl.GLSurfaceView;
 import android.opengl.Matrix;
-import android.util.Log;
 
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
@@ -12,7 +11,20 @@ import javax.microedition.khronos.opengles.GL10;
  * Created by Jennifer on 03/11/2015.
  */
 public class MyGLRenderer implements GLSurfaceView.Renderer {
-    private Cesped cesped;
+    //TODO: Metodo para añadir coches y camiones a la carretera
+    //TODO: Metodo para añadir arbustos y arboles al cesped
+    //TODO: Metodo para añadir troncos y nenufares al rio
+    //TODO: Metodo para detectar colisiones entre la rana y los coches
+    //TODO: Metodo para detectar si la rana esta sobre agua o sobre un tronco o nenufar (MISMO QUE EL ANTERIOR)
+    //TODO: Metodo para detectar ver se si puede mover a la posicion deseada
+    //TODO: Deteccion del evento de "click"
+    //TODO: Deteccion del evento de deslizamiento y su direccion
+    //TODO: Metodo de movimiento de la rana (salto = Parabola?)
+    //TODO: Cambiar la camara de sitio (Vista de las laminas del suelo al estilo crossy road)
+    //TODO: Metodo generacion aleatoria de terreno
+
+
+    private Terreno terreno;
     //Color Verde en formato R G B A 0 = min 1 = max
     private float[] colorCesped = { 0.0f, 1.0f,0.0f,1.0f};
 
@@ -29,9 +41,9 @@ public class MyGLRenderer implements GLSurfaceView.Renderer {
 
 
 
-        cesped = new Cesped();
+        terreno = new Terreno();
 
-        Matrix.translateM(cesped.mModelMatrix, 0, 0.0f, 0.0f, -3.0f);
+        Matrix.translateM(terreno.mModelMatrix, 0, 0.0f, 0.0f, -3.0f);
 
 
     }
@@ -53,9 +65,9 @@ public class MyGLRenderer implements GLSurfaceView.Renderer {
 
         Matrix.multiplyMM(mMVPMatrix, 0, mProjectionMatrix, 0, mViewMatrix, 0);
 
-        Matrix.scaleM(mScalationMatrix, 0, cesped.mModelMatrix, 0, 1.0f, 2.0f, 1.0f);
+        Matrix.scaleM(mScalationMatrix, 0, terreno.mModelMatrix, 0, 1.0f, 2.0f, 1.0f);
         Matrix.multiplyMM(mTempMatrix, 0, mMVPMatrix, 0, mScalationMatrix, 0);
-        cesped.draw(colorCesped, mTempMatrix);
+        terreno.draw(colorCesped, mTempMatrix);
 
     }
 

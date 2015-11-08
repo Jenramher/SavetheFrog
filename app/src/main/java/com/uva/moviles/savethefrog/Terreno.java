@@ -11,13 +11,14 @@ import java.nio.ShortBuffer;
 /**
  * Created by Jennifer on 06/11/2015.
  */
-public class Cesped {
+public class Terreno {
     //Buffers para las coordenadas y el orden en el que estan se van a dibujar
     private FloatBuffer vertexBuffer;
     private ShortBuffer drawListBuffer;
 
     //Matriz del modelo diagonal
-    //CAMBIARRRRRRRR
+    //TODO: GETTERs Y SETTERs
+    //TODO: Añadir texturas
     public float[] mModelMatrix = new float[16];
 
     //Numero de coordenadas en que componen cada figura
@@ -27,16 +28,15 @@ public class Cesped {
 
 
     static float coord[] = {
-            0.0f, 1.0f, 0.0f,
             0.0f, 0.0f, 0.0f,
-            0.25f, 0.0f, 0.0f,
-            0.25f, 1.0f, 0.0f
+            0.0f, 1.0f, 0.0f,
+            1.0f, 0.0f, 0.0f,
+            1.0f, 1.0f, 0.0f
     };
 
-    private short drawOrder[] = {0,1,2,0,2,3};
+    private short drawOrder[] = {0,1,2,2,1,3};
 
     // Orden en el que se dibujan las vertices del vector de coordenadas
-    //private short drawOrder[] = {0,1,2,3,4,5};
 
     private final String vertexShaderCode = "uniform mat4 uMVPMatrix;attribute vec4 vPosition;void main() {gl_Position = uMVPMatrix * vPosition;}";
     private final String fragmentShaderCode = "precision mediump float;uniform vec4 vColor;void main() {gl_FragColor = vColor;}";
@@ -50,7 +50,7 @@ public class Cesped {
 
     private int mMVPMatrixHandle;
 
-    public Cesped() {
+    public Terreno() {
 
         ByteBuffer bb = ByteBuffer.allocateDirect(
                 coord.length * 4);
